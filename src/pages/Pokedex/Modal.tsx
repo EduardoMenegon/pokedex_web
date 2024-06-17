@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Pokemon {
-  types: any[];
+  types: any;
   id: number;
   name: string;
   sprites: {

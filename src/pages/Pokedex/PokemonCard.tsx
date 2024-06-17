@@ -2,12 +2,25 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 
 interface Pokemon {
-  types: any[];
+  types: any;
   id: number;
   name: string;
   sprites: {
     front_default: string;
+    other: {
+      home: {
+        front_default: string;
+      };
+    };
   };
+  base_experience: number;
+  height: number;
+  weight: number;
+  abilities: {
+    ability: {
+      name: string;
+    };
+  }[];
 }
 
 interface PokemonCardProps {

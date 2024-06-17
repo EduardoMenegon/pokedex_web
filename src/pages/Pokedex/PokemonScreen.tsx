@@ -6,17 +6,26 @@ import Footer from '../../components/Footer';
 import PokemonCard from './PokemonCard';
 
 interface Pokemon {
+  types: any;
   id: number;
   name: string;
   sprites: {
     front_default: string;
+    other: {
+      home: {
+        front_default: string;
+      };
+    };
   };
-  types: {
-    type: {
+  base_experience: number;
+  height: number;
+  weight: number;
+  abilities: {
+    ability: {
       name: string;
     };
   }[];
-  url: string;
+  url: string
 }
 
 const PokemonScreen: React.FC = () => {
@@ -69,7 +78,7 @@ const PokemonScreen: React.FC = () => {
     });
   
     if (filteredPokemons.length === 0) setIsEndReached(true);
-    setPokemons(prevPokemons => [...prevPokemons, ...filteredPokemons]); // Concatenates new and existing pokemons
+    setPokemons(prevPokemons => [...prevPokemons, ...filteredPokemons]);
     setOffset(newOffset + 20);
     setIsLoading(false);
   };
